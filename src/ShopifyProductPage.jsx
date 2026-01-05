@@ -21,7 +21,9 @@ const PRODUCT_IMAGE_DESKTOP = productImageLaptop; // Laptop view image
 
 // Product Details - Edit these easily
 const PRODUCT_NAME = "Women Printed Straight Kurta with Palazzo & Dupatta MF-258";
-const PRODUCT_PRICE = 699;
+const PRODUCT_PRICE = 8541;
+const PRODUCT_ORIGINAL_PRICE = 8990;
+const PRODUCT_DISCOUNT = 5;
 const PRODUCT_SKU = "MF-258";
 const PRODUCT_DESCRIPTION = "Women Kurta With Palazzo & Dupattta With Handwork on Yoke.";
 const PRODUCT_COLORS = [
@@ -51,15 +53,17 @@ const ShopifyProductPage = () => {
   const [productSortBy, setProductSortBy] = useState('most-recent');
   const [brandSortBy, setBrandSortBy] = useState('most-recent');
   const [showInstagramModal, setShowInstagramModal] = useState(false);
+  const [isShippingOpen, setIsShippingOpen] = useState(false);
+  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
 
   // Instagram reels URLs
   const instagramReels = [
-    'https://www.instagram.com/reel/DSkX84lEp7-/?igsh=MTUwc2w1cGd2djk4cA==',
-    'https://www.instagram.com/reel/DSsOOxjkqYX/?igsh=MWwza3dxNWRyamRtdg==',
-    'https://www.instagram.com/reel/DSxJ0k_kjjq/?igsh=a215emczd2FlaTN3',
-    'https://www.instagram.com/reel/DSz-KF8EgmB/?igsh=MTVodzh5MjdiMTY1NA==',
-    'https://www.instagram.com/reel/DS_6wamk752/?igsh=d3RrbWVzOXU3Y3Rj',
-    'https://www.instagram.com/reel/DSSJUoSAXQX/?igsh=ejV4Y2RweXVrM3V5'
+    'https://www.instagram.com/reel/DRoTRrjkdQA/?igsh=cWg4MTQ5b2g0bmNr',
+    'https://www.instagram.com/reel/DRgg6_yERoB/?igsh=MWYwZDIwcjQ4NXo2MA==',
+    'https://www.instagram.com/reel/DRb6OymkeWA/?igsh=cnRoeDFmMGVoZ2k5',
+    'https://www.instagram.com/reel/DRXCPAcEb-N/?igsh=MW81c3B2MXJtdzR1Zg==',
+    'https://www.instagram.com/reel/DRMB0mLESBi/?igsh=enI2cTlsZzZjNWsw',
+    'https://www.instagram.com/reel/DQvaoCciJxN/?igsh=ZWs4a3Bma3plZW9l'
   ];
 
   // Create Instagram embed HTML using blockquote format
@@ -305,7 +309,7 @@ const ShopifyProductPage = () => {
             {/* Product Details Section */}
             <div className="flex flex-col gap-4">
               {/* Product Title */}
-              <h1 className="text-2xl md:text-3xl font-bold text-amber-900 leading-tight">
+              <h1 className="text-2xl md:text-3xl font-serif font-normal text-gray-900 leading-tight">
                 {PRODUCT_NAME}
               </h1>
               
@@ -318,13 +322,13 @@ const ShopifyProductPage = () => {
                     <div className="flex items-center gap-0.5">
                       {/* Show only 1 star on mobile, full 4.5 stars on desktop */}
                       <div className="md:hidden">
-                        <svg className="w-5 h-5" style={{ color: '#D2A38E' }} fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-5 h-5" style={{ color: '#620000' }} fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
                       </div>
                       <div className="hidden md:flex items-center gap-0.5">
                         {[...Array(4)].map((_, i) => (
-                          <svg key={i} className="w-5 h-5" style={{ color: '#D2A38E' }} fill="currentColor" viewBox="0 0 20 20">
+                          <svg key={i} className="w-5 h-5" style={{ color: '#620000' }} fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
                         ))}
@@ -332,7 +336,7 @@ const ShopifyProductPage = () => {
                           <svg className="w-5 h-5 text-gray-300 absolute" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
-                          <div className="absolute overflow-hidden" style={{ width: '50%', color: '#D2A38E' }}>
+                          <div className="absolute overflow-hidden" style={{ width: '50%', color: '#620000' }}>
                             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                             </svg>
@@ -356,31 +360,31 @@ const ShopifyProductPage = () => {
                   <div className="w-px h-4 bg-gray-300"></div>
                   
                   {/* Sold Count */}
-                  <div className="px-3 py-1.5 rounded-lg" style={{ backgroundColor: 'rgba(210, 163, 142, 0.15)' }}>
+                  <div className="px-3 py-1.5 rounded-lg" style={{ backgroundColor: 'rgba(98, 0, 0, 0.15)' }}>
                     <div className="flex items-center gap-2">
-                      <svg className="w-4 h-4" style={{ color: '#D2A38E' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" style={{ color: '#620000' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                       </svg>
-                      <span className="text-sm font-medium" style={{ color: '#D2A38E' }}>SOLD 235</span>
+                      <span className="text-sm font-medium" style={{ color: '#620000' }}>SOLD 235</span>
                     </div>
                   </div>
                 </div>
                 
                 {/* Feature Tags - Only 3 keywords */}
                 <div className="flex flex-wrap gap-2">
-                  <div className="px-3 py-1.5 rounded-lg flex items-center gap-2" style={{ backgroundColor: '#D2A38E' }}>
+                  <div className="px-3 py-1.5 rounded-lg flex items-center gap-2" style={{ backgroundColor: '#620000' }}>
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-sm font-normal text-white">Fit</span>
                   </div>
-                  <div className="px-3 py-1.5 rounded-lg flex items-center gap-2" style={{ backgroundColor: '#D2A38E' }}>
+                  <div className="px-3 py-1.5 rounded-lg flex items-center gap-2" style={{ backgroundColor: '#620000' }}>
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-sm font-normal text-white">Premium</span>
                   </div>
-                  <div className="px-3 py-1.5 rounded-lg flex items-center gap-2" style={{ backgroundColor: '#D2A38E' }}>
+                  <div className="px-3 py-1.5 rounded-lg flex items-center gap-2" style={{ backgroundColor: '#620000' }}>
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
@@ -389,124 +393,149 @@ const ShopifyProductPage = () => {
                 </div>
               </div>
               
-              {/* Review Prompt */}
-              <p className="text-sm text-black font-normal">
-                Be the first to review this product
-              </p>
-
-              {/* Pricing and Stock Section */}
-              <div className="flex items-start justify-between gap-4">
-                <div className="flex flex-col gap-1">
-                  <span className="text-sm text-black font-normal">As low as</span>
-                  <span className="text-2xl md:text-3xl font-bold text-amber-900">
-                    ₹{PRODUCT_PRICE.toFixed(2)}
+              {/* Pricing Section */}
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-3 flex-wrap">
+                  <span className="text-lg md:text-xl text-gray-500 line-through">
+                    Rs. {PRODUCT_ORIGINAL_PRICE.toLocaleString('en-IN')}
                   </span>
-                  <div className="flex items-center gap-2 mt-1">
-                    <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-sm text-black font-normal">In stock</span>
-                  </div>
+                  <span className="text-lg md:text-xl font-semibold text-gray-900">
+                    Rs. {PRODUCT_PRICE.toLocaleString('en-IN')}
+                  </span>
+                  <span className="text-sm font-medium text-red-600">
+                    Save {PRODUCT_DISCOUNT}%
+                  </span>
                 </div>
-                <div className="text-right">
-                  <span className="text-sm text-black font-normal">SKU#: {PRODUCT_SKU}</span>
-                </div>
+                <p className="text-sm text-gray-600">
+                  Tax included. Shipping calculated at checkout.
+                </p>
               </div>
 
-              {/* Product Description */}
-              <div className="text-base text-black font-normal">
-                {PRODUCT_DESCRIPTION}
-              </div>
-
-              {/* Color Selection */}
-              <div className="flex flex-col gap-2">
-                <label className="text-base font-bold text-black">Color</label>
-                <div className="flex gap-3">
-                  {PRODUCT_COLORS.map((color, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setSelectedColor(index)}
-                      className={`w-12 h-12 border-2 rounded transition-all ${
-                        selectedColor === index 
-                          ? 'border-amber-900 ring-2 ring-amber-900 ring-offset-2' 
-                          : 'border-gray-300 hover:border-gray-400'
-                      }`}
-                      style={{ backgroundColor: color.value }}
-                      aria-label={color.name}
-                    />
-                  ))}
-                </div>
-              </div>
-
-              {/* Size Selection */}
-              <div className="flex flex-col gap-2">
-                <label className="text-base font-bold text-black">Size</label>
-                <div className="flex gap-3 flex-wrap">
-                  {PRODUCT_SIZES.map((size) => (
-                    <button
-                      key={size}
-                      onClick={() => setSelectedSize(size)}
-                      className={`px-6 py-2 border rounded text-base font-normal transition-all ${
-                        selectedSize === size
-                          ? 'border-amber-900 bg-amber-50 text-amber-900'
-                          : 'border-gray-300 bg-gray-50 text-gray-700 hover:border-gray-400'
-                      }`}
-                    >
-                      {size}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Quantity Selector */}
-              <div className="flex flex-col gap-2">
-                <label className="text-base font-bold text-black">Qty</label>
-                <div className="flex items-center gap-3">
-                  <button
-                    onClick={increaseQuantity}
-                    className="w-8 h-8 border border-gray-300 rounded flex items-center justify-center text-gray-700 hover:bg-gray-100 transition-colors"
-                  >
-                    +
-                  </button>
-                  <input
-                    type="number"
-                    value={quantity}
-                    readOnly
-                    className="w-16 h-8 border border-gray-300 rounded text-center text-base"
-                  />
-                  <button
-                    onClick={decreaseQuantity}
-                    className="w-8 h-8 border border-gray-300 rounded flex items-center justify-center text-gray-700 hover:bg-gray-100 transition-colors"
-                  >
-                    -
-                  </button>
-                </div>
-              </div>
-
-              {/* Add to Cart Button */}
-              <button className="w-full py-4 px-6 bg-amber-700 text-white rounded font-semibold text-base uppercase hover:bg-amber-800 transition-colors">
-                ADD TO CART
-              </button>
-
-              {/* Additional Actions */}
-              <div className="flex flex-col gap-3 pt-2">
-                <button className="flex items-center gap-2 text-gray-700 text-sm hover:text-amber-900 transition-colors">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              {/* Promotional Offers */}
+              <div className="flex flex-col gap-2 py-3">
+                <div className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                   </svg>
-                  <span>ADD TO WISH LIST</span>
-                </button>
-                <button className="flex items-center gap-2 text-gray-700 text-sm hover:text-amber-900 transition-colors">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  <span className="text-sm text-gray-700">Additional 5% discount above Rs 25,000</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
                   </svg>
-                  <span>ADD TO COMPARE</span>
-                </button>
-                <button className="flex items-center gap-2 text-gray-700 text-sm hover:text-amber-900 transition-colors">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                  <span className="text-sm text-gray-700">Additional 10% Discount Above Rs 40,000</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+                  </svg>
+                  <span className="text-sm text-gray-700">Additional 15% Discount Above Rs 60,000</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                  </svg>
+                  <span className="text-sm text-gray-700">All Products are Ready to Ship and are shipped in 24-48 Hours</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <svg className="w-4 h-4 text-gray-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span className="text-sm text-gray-700">Free International Shipping Above Rs 20,000</span>
+                </div>
+              </div>
+
+              {/* Size Chart */}
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                  </svg>
+                  <span className="text-sm font-semibold text-gray-900">SIZE CHART</span>
+                </div>
+                <button className="flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 transition-colors">
+                  <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                   </svg>
                   <span>Size Chart</span>
+                </button>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex flex-col gap-3">
+                <button className="w-full py-3 px-6 bg-white border-2 border-black text-black rounded font-semibold text-sm uppercase hover:bg-gray-50 transition-colors">
+                  ADD TO CART
+                </button>
+                <button className="w-full py-3 px-6 bg-[#620000] text-white rounded font-semibold text-sm uppercase hover:bg-[#4a0000] transition-colors">
+                  BUY IT NOW
+                </button>
+              </div>
+
+              {/* Collapsible Shipping Information */}
+              <div className="border-t border-gray-200 pt-4">
+                <button
+                  onClick={() => setIsShippingOpen(!isShippingOpen)}
+                  className="w-full flex items-center justify-between py-3 text-sm font-semibold text-gray-900 hover:text-gray-700 transition-colors"
+                >
+                  <span>SHIPPING INFORMATION</span>
+                  <svg 
+                    className={`w-5 h-5 transition-transform ${isShippingOpen ? 'rotate-180' : ''}`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isShippingOpen && (
+                  <div className="pb-4 text-sm text-gray-600">
+                    <p>All products are ready to ship and are shipped within 24-48 hours. Free international shipping available for orders above Rs 20,000.</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Collapsible Description */}
+              <div className="border-t border-gray-200 pt-4">
+                <button
+                  onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}
+                  className="w-full flex items-center justify-between py-3 text-sm font-semibold text-gray-900 hover:text-gray-700 transition-colors"
+                >
+                  <span>DESCRIPTION</span>
+                  <svg 
+                    className={`w-5 h-5 transition-transform ${isDescriptionOpen ? 'rotate-180' : ''}`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {isDescriptionOpen && (
+                  <div className="pb-4 text-sm text-gray-600">
+                    <p>{PRODUCT_DESCRIPTION}</p>
+                  </div>
+                )}
+              </div>
+
+              {/* Social Sharing */}
+              <div className="flex items-center gap-6 pt-4 border-t border-gray-200">
+                <button className="flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 transition-colors">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                  <span>Share</span>
+                </button>
+                <button className="flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 transition-colors">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482c0 .39.045.765.127 1.124C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                  </svg>
+                  <span>Tweet</span>
+                </button>
+                <button className="flex items-center gap-2 text-sm text-gray-700 hover:text-gray-900 transition-colors">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.487.535 6.624 0 11.99-5.367 11.99-11.987C23.97 5.39 18.592.026 12.017.026L12.017 0z"/>
+                  </svg>
+                  <span>Pin it</span>
                 </button>
               </div>
             </div>
@@ -531,8 +560,8 @@ const ShopifyProductPage = () => {
                     <div 
                       className="w-32 h-32 rounded-full flex items-center justify-center mb-4 relative mx-auto"
                       style={{
-                        background: `conic-gradient(from 225deg, #D3A48C 0%, #c4957a 65%, rgba(211, 164, 140, 0.18) 65%)`,
-                        boxShadow: `0 18px 35px rgba(211, 164, 140, 0.18)`
+                        background: `conic-gradient(from 225deg, #620000 0%, #c4957a 65%, rgba(98, 0, 0, 0.18) 65%)`,
+                        boxShadow: `0 18px 35px rgba(98, 0, 0, 0.18)`
                       }}
                     >
                       <div 
@@ -550,7 +579,7 @@ const ShopifyProductPage = () => {
                     </div>
                     <div className="flex justify-center mb-2">
                       {[...Array(5)].map((_, index) => (
-                        <svg key={index} className="w-5 h-5" style={{ color: '#D3A48C' }} fill="currentColor" viewBox="0 0 20 20">
+                        <svg key={index} className="w-5 h-5" style={{ color: '#620000' }} fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
                       ))}
@@ -558,7 +587,7 @@ const ShopifyProductPage = () => {
                     <p className="text-sm text-gray-600 mb-3">
                       Based on <strong>147</strong> verified reviews
                     </p>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs border" style={{ backgroundColor: 'rgba(211, 164, 140, 0.1)', color: '#D3A48C', borderColor: 'rgba(211, 164, 140, 0.3)' }}>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs border" style={{ backgroundColor: 'rgba(98, 0, 0, 0.1)', color: '#620000', borderColor: 'rgba(98, 0, 0, 0.3)' }}>
                       <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
@@ -577,7 +606,7 @@ const ShopifyProductPage = () => {
                     ].map((item) => (
                       <div key={item.stars} className="flex items-center gap-2 sm:gap-3">
                         <div className="flex items-center gap-1 text-xs text-gray-600 w-8 flex-shrink-0">
-                          <svg className="w-3 h-3" style={{ color: '#D3A48C' }} fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-3 h-3" style={{ color: '#620000' }} fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
                           <span>{item.stars}</span>
@@ -588,7 +617,7 @@ const ShopifyProductPage = () => {
                             style={{ 
                               width: `${item.percent}%`,
                               minWidth: '2px',
-                              backgroundColor: '#D3A48C'
+                              backgroundColor: '#620000'
                             }}
                           />
                         </div>
@@ -605,7 +634,7 @@ const ShopifyProductPage = () => {
                       { icon: '💧', label: 'Say fabric quality is excellent', value: '92%' },
                     ].map((stat, idx) => (
                       <div key={idx} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-lg" style={{ color: '#D3A48C' }}>
+                        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-lg" style={{ color: '#620000' }}>
                           {stat.icon}
                         </div>
                         <div className="flex-1">
@@ -629,7 +658,7 @@ const ShopifyProductPage = () => {
                     ? 'bg-white shadow-sm text-gray-900' 
                     : 'hover:text-gray-900'
                   }`}
-                  style={{ color: activeTab === 'product' ? undefined : '#D3A48C' }}
+                  style={{ color: activeTab === 'product' ? undefined : '#620000' }}
                   onClick={() => setActiveTab('product')}
                 >
                   Product Reviews
@@ -640,7 +669,7 @@ const ShopifyProductPage = () => {
                     ? 'bg-white shadow-sm text-gray-900' 
                     : 'hover:text-gray-900'
                   }`}
-                  style={{ color: activeTab === 'brand' ? undefined : '#D3A48C' }}
+                  style={{ color: activeTab === 'brand' ? undefined : '#620000' }}
                   onClick={() => setActiveTab('brand')}
                 >
                   Brand Reviews
@@ -651,7 +680,7 @@ const ShopifyProductPage = () => {
                     ? 'bg-white shadow-sm text-gray-900' 
                     : 'hover:text-gray-900'
                   }`}
-                  style={{ color: activeTab === 'media' ? undefined : '#D3A48C' }}
+                  style={{ color: activeTab === 'media' ? undefined : '#620000' }}
                   onClick={() => setActiveTab('media')}
                 >
                   Media
@@ -667,7 +696,7 @@ const ShopifyProductPage = () => {
                       <div className="flex items-center gap-2">
                         <h3 className="text-xs font-semibold text-gray-700 uppercase tracking-wider">AI INSIGHT</h3>
                       </div>
-                      <button className="px-3 py-1.5 text-xs font-medium rounded-full" style={{ backgroundColor: 'rgba(211, 164, 140, 0.1)', color: '#D3A48C' }}>Verified reviews</button>
+                      <button className="px-3 py-1.5 text-xs font-medium rounded-full" style={{ backgroundColor: 'rgba(98, 0, 0, 0.1)', color: '#620000' }}>Verified reviews</button>
                     </div>
                     
                     <h4 className="text-xl font-bold text-gray-900 mb-2">Customers say</h4>
@@ -676,12 +705,12 @@ const ShopifyProductPage = () => {
                       {isAISummaryExpanded ? (
                         <>
                           Customers love how this kurta fits perfectly and flatters all body types. The premium fabric quality and elegant design make it ideal for various occasions. The kurta drapes beautifully and maintains its shape throughout the day, making it perfect for both casual and formal events. Many customers appreciate the attention to detail in the handwork on the yoke and the way the fabric feels against the skin.
-                          <button onClick={() => setIsAISummaryExpanded(false)} className="underline ml-1 cursor-pointer" style={{ color: '#D3A48C' }}>Read less</button>
+                          <button onClick={() => setIsAISummaryExpanded(false)} className="underline ml-1 cursor-pointer" style={{ color: '#620000' }}>Read less</button>
                         </>
                       ) : (
                         <>
                           Customers love how this kurta fits perfectly and flatters all body types. The premium fabric quality and elegant design make it ideal for various occasions.
-                          <button onClick={() => setIsAISummaryExpanded(true)} className="underline ml-1 cursor-pointer" style={{ color: '#D3A48C' }}>Read more</button>
+                          <button onClick={() => setIsAISummaryExpanded(true)} className="underline ml-1 cursor-pointer" style={{ color: '#620000' }}>Read more</button>
                         </>
                       )}
                     </p>
@@ -697,8 +726,8 @@ const ShopifyProductPage = () => {
                       <div className="flex flex-wrap gap-2">
                         {['Perfect Fit', 'Premium Quality Fabric', 'Elegant Design', 'Comfortable Wear', 'Flattering Silhouette'].map((item, index) => (
                           <div key={index} className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#D3A48C' }}></span>
-                            <span className="text-sm font-semibold" style={{ color: '#D3A48C' }}>{item}</span>
+                            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#620000' }}></span>
+                            <span className="text-sm font-semibold" style={{ color: '#620000' }}>{item}</span>
                           </div>
                         ))}
                       </div>
@@ -773,7 +802,7 @@ const ShopifyProductPage = () => {
                                     <svg 
                                       key={i} 
                                       className={`w-4 h-4 ${i < review.rating ? '' : 'text-gray-300'}`}
-                                      style={i < review.rating ? { color: '#D3A48C' } : {}}
+                                      style={i < review.rating ? { color: '#620000' } : {}}
                                       fill="currentColor" 
                                       viewBox="0 0 20 20"
                                     >
@@ -867,7 +896,7 @@ const ShopifyProductPage = () => {
                       <div className="flex items-center gap-2">
                         <h3 className="text-xs font-semibold text-gray-700 uppercase tracking-wider">AI INSIGHT</h3>
                       </div>
-                      <button className="px-3 py-1.5 text-xs font-medium rounded-full" style={{ backgroundColor: 'rgba(211, 164, 140, 0.1)', color: '#D3A48C' }}>Verified reviews</button>
+                      <button className="px-3 py-1.5 text-xs font-medium rounded-full" style={{ backgroundColor: 'rgba(98, 0, 0, 0.1)', color: '#620000' }}>Verified reviews</button>
                     </div>
                     
                     <h4 className="text-xl font-bold text-gray-900 mb-2">Customers say about the brand</h4>
@@ -876,12 +905,12 @@ const ShopifyProductPage = () => {
                       {isBrandAISummaryExpanded ? (
                         <>
                           Customers love the brand for its consistent quality and excellent customer service. The brand is known for premium fabrics, elegant designs, and comfortable fits that flatter all body types. Many customers appreciate the brand's attention to detail and commitment to customer satisfaction. The brand has built a strong reputation for delivering stylish and well-made ethnic wear that stands the test of time. Customers frequently mention the brand's reliability, value for money, and trustworthy service.
-                          <button onClick={() => setIsBrandAISummaryExpanded(false)} className="underline ml-1 cursor-pointer" style={{ color: '#D3A48C' }}>Read less</button>
+                          <button onClick={() => setIsBrandAISummaryExpanded(false)} className="underline ml-1 cursor-pointer" style={{ color: '#620000' }}>Read less</button>
                         </>
                       ) : (
                         <>
                           Customers love the brand for its consistent quality and excellent customer service. The brand is known for premium fabrics, elegant designs, and comfortable fits that flatter all body types.
-                          <button onClick={() => setIsBrandAISummaryExpanded(true)} className="underline ml-1 cursor-pointer" style={{ color: '#D3A48C' }}>Read more</button>
+                          <button onClick={() => setIsBrandAISummaryExpanded(true)} className="underline ml-1 cursor-pointer" style={{ color: '#620000' }}>Read more</button>
                         </>
                       )}
                     </p>
@@ -897,8 +926,8 @@ const ShopifyProductPage = () => {
                       <div className="flex flex-wrap gap-2">
                         {['Premium Quality', 'Excellent Customer Service', 'Reliable Brand', 'Elegant Designs', 'Comfortable Fit', 'Great Value'].map((item, index) => (
                           <div key={index} className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#D3A48C' }}></span>
-                            <span className="text-sm font-semibold" style={{ color: '#D3A48C' }}>{item}</span>
+                            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#620000' }}></span>
+                            <span className="text-sm font-semibold" style={{ color: '#620000' }}>{item}</span>
                           </div>
                         ))}
                       </div>
@@ -945,7 +974,7 @@ const ShopifyProductPage = () => {
                                     <svg 
                                       key={i} 
                                       className={`w-4 h-4 ${i < review.rating ? '' : 'text-gray-300'}`}
-                                      style={i < review.rating ? { color: '#D3A48C' } : {}}
+                                      style={i < review.rating ? { color: '#620000' } : {}}
                                       fill="currentColor" 
                                       viewBox="0 0 20 20"
                                     >
@@ -1143,7 +1172,7 @@ const ShopifyProductPage = () => {
                     <svg className="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M8 0L10.06 5.51L16 6.18L12 10.15L12.94 16L8 13.18L3.06 16L4 10.15L0 6.18L5.94 5.51L8 0Z" fill="#FF9500"/>
                     </svg>
-                    <div className="w-px h-3 md:h-4" style={{ backgroundColor: '#D2A38E' }}></div>
+                    <div className="w-px h-3 md:h-4" style={{ backgroundColor: '#620000' }}></div>
                     <span className="text-xs md:text-sm font-bold text-gray-900">203</span>
                     <span className="text-xs md:text-sm font-bold text-gray-900">Reviews</span>
                   </div>
@@ -1221,16 +1250,18 @@ const ShopifyProductPage = () => {
         </div>
       )}
       
-      {/* Scroll to Top Button */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-6 right-6 w-12 h-12 bg-amber-700 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-amber-800 transition-colors z-50"
-        aria-label="Scroll to top"
+      {/* Floating WhatsApp Button */}
+      <a
+        href="https://wa.me/1234567890"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:bg-[#20BA5A] transition-colors z-50"
+        aria-label="Contact us on WhatsApp"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
         </svg>
-      </button>
+      </a>
     </div>
   );
 };
