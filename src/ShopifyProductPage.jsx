@@ -58,12 +58,12 @@ const ShopifyProductPage = () => {
 
   // Instagram reels URLs
   const instagramReels = [
-    'https://www.instagram.com/reel/DRUkEnujFg2/?igsh=aGRrejZvazhyZGl6',
-    'https://www.instagram.com/reel/DRev_pvFJoq/?igsh=ejhzd21vbGpzbnBu',
-    'https://www.instagram.com/reel/DRmdteZDbe_/?igsh=MzI5MWFqNW1xMWZw',
-    'https://www.instagram.com/reel/DRwmNGfjPSN/?igsh=MWhtNG0xOTRtZmN0OA==',
-    'https://www.instagram.com/reel/DR13frhD--J/?igsh=MXB2OHVvZm90MGd0dA==',
-    'https://www.instagram.com/reel/DSHZm4ejqu9/?igsh=MWh5aTAzaGp0NWk3bw=='
+    'https://www.instagram.com/reel/DRgpPlcEfhi/?igsh=MTZlMDI1cjhmYTZlbw==',
+    'https://www.instagram.com/reel/DRtyGg1kXz0/?igsh=bHY4OTBxZHkxc2Vj',
+    'https://www.instagram.com/reel/DSwjXqmEUYI/?igsh=MXc4aHFjMTBxOXQ4Ng==',
+    'https://www.instagram.com/reel/DMrppODyRPU/?igsh=MXcxMzRvY2dtYnY5Zw==',
+    'https://www.instagram.com/reel/DMzXk0XykBD/?igsh=MTliczJvMXk5NHRibw==',
+    'https://www.instagram.com/reel/DOcZHYQkoPY/?igsh=NWZyc3l1MjczbGly'
   ];
 
   // Create Instagram embed HTML using blockquote format
@@ -322,13 +322,13 @@ const ShopifyProductPage = () => {
                     <div className="flex items-center gap-0.5">
                       {/* Show only 1 star on mobile, full 4.5 stars on desktop */}
                       <div className="md:hidden">
-                        <svg className="w-5 h-5" style={{ color: '#620000' }} fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-5 h-5" style={{ color: '#F48106' }} fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
                       </div>
                       <div className="hidden md:flex items-center gap-0.5">
                         {[...Array(4)].map((_, i) => (
-                          <svg key={i} className="w-5 h-5" style={{ color: '#620000' }} fill="currentColor" viewBox="0 0 20 20">
+                          <svg key={i} className="w-5 h-5" style={{ color: '#F48106' }} fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
                         ))}
@@ -336,7 +336,7 @@ const ShopifyProductPage = () => {
                           <svg className="w-5 h-5 text-gray-300 absolute" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
-                          <div className="absolute overflow-hidden" style={{ width: '50%', color: '#620000' }}>
+                          <div className="absolute overflow-hidden" style={{ width: '50%', color: '#F48106' }}>
                             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                             </svg>
@@ -360,31 +360,31 @@ const ShopifyProductPage = () => {
                   <div className="w-px h-4 bg-gray-300"></div>
                   
                   {/* Sold Count */}
-                  <div className="px-3 py-1.5 rounded-lg" style={{ backgroundColor: 'rgba(98, 0, 0, 0.15)' }}>
+                  <div className="px-3 py-1.5 rounded-lg" style={{ backgroundColor: 'rgba(244, 129, 6, 0.15)' }}>
                     <div className="flex items-center gap-2">
-                      <svg className="w-4 h-4" style={{ color: '#620000' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4" style={{ color: '#F48106' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                       </svg>
-                      <span className="text-sm font-medium" style={{ color: '#620000' }}>SOLD 235</span>
+                      <span className="text-sm font-medium" style={{ color: '#F48106' }}>SOLD 235</span>
                     </div>
                   </div>
                 </div>
                 
                 {/* Feature Tags - Only 3 keywords */}
                 <div className="flex flex-wrap gap-2">
-                  <div className="px-3 py-1.5 rounded-lg flex items-center gap-2" style={{ backgroundColor: '#620000' }}>
+                  <div className="px-3 py-1.5 rounded-lg flex items-center gap-2" style={{ backgroundColor: '#F48106' }}>
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-sm font-normal text-white">Fit</span>
                   </div>
-                  <div className="px-3 py-1.5 rounded-lg flex items-center gap-2" style={{ backgroundColor: '#620000' }}>
+                  <div className="px-3 py-1.5 rounded-lg flex items-center gap-2" style={{ backgroundColor: '#F48106' }}>
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
                     <span className="text-sm font-normal text-white">Premium</span>
                   </div>
-                  <div className="px-3 py-1.5 rounded-lg flex items-center gap-2" style={{ backgroundColor: '#620000' }}>
+                  <div className="px-3 py-1.5 rounded-lg flex items-center gap-2" style={{ backgroundColor: '#F48106' }}>
                     <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                     </svg>
@@ -466,7 +466,7 @@ const ShopifyProductPage = () => {
                 <button className="w-full py-3 px-6 bg-white border-2 border-black text-black rounded font-semibold text-sm uppercase hover:bg-gray-50 transition-colors">
                   ADD TO CART
                 </button>
-                <button className="w-full py-3 px-6 bg-[#620000] text-white rounded font-semibold text-sm uppercase hover:bg-[#4a0000] transition-colors">
+                <button className="w-full py-3 px-6 bg-[#F48106] text-white rounded font-semibold text-sm uppercase hover:bg-[#C66905] transition-colors">
                   BUY IT NOW
                 </button>
               </div>
@@ -560,8 +560,8 @@ const ShopifyProductPage = () => {
                     <div 
                       className="w-32 h-32 rounded-full flex items-center justify-center mb-4 relative mx-auto"
                       style={{
-                        background: `conic-gradient(from 225deg, #620000 0%, #c4957a 65%, rgba(98, 0, 0, 0.18) 65%)`,
-                        boxShadow: `0 18px 35px rgba(98, 0, 0, 0.18)`
+                        background: `conic-gradient(from 225deg, #F48106 0%, #c4957a 65%, rgba(244, 129, 6, 0.18) 65%)`,
+                        boxShadow: `0 18px 35px rgba(244, 129, 6, 0.18)`
                       }}
                     >
                       <div 
@@ -579,7 +579,7 @@ const ShopifyProductPage = () => {
                     </div>
                     <div className="flex justify-center mb-2">
                       {[...Array(5)].map((_, index) => (
-                        <svg key={index} className="w-5 h-5" style={{ color: '#620000' }} fill="currentColor" viewBox="0 0 20 20">
+                        <svg key={index} className="w-5 h-5" style={{ color: '#F48106' }} fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
                       ))}
@@ -587,7 +587,7 @@ const ShopifyProductPage = () => {
                     <p className="text-sm text-gray-600 mb-3">
                       Based on <strong>147</strong> verified reviews
                     </p>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs border" style={{ backgroundColor: 'rgba(98, 0, 0, 0.1)', color: '#620000', borderColor: 'rgba(98, 0, 0, 0.3)' }}>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs border" style={{ backgroundColor: 'rgba(244, 129, 6, 0.1)', color: '#F48106', borderColor: 'rgba(244, 129, 6, 0.3)' }}>
                       <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
@@ -606,7 +606,7 @@ const ShopifyProductPage = () => {
                     ].map((item) => (
                       <div key={item.stars} className="flex items-center gap-2 sm:gap-3">
                         <div className="flex items-center gap-1 text-xs text-gray-600 w-8 flex-shrink-0">
-                          <svg className="w-3 h-3" style={{ color: '#620000' }} fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-3 h-3" style={{ color: '#F48106' }} fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                           </svg>
                           <span>{item.stars}</span>
@@ -617,7 +617,7 @@ const ShopifyProductPage = () => {
                             style={{ 
                               width: `${item.percent}%`,
                               minWidth: '2px',
-                              backgroundColor: '#620000'
+                              backgroundColor: '#F48106'
                             }}
                           />
                         </div>
@@ -634,7 +634,7 @@ const ShopifyProductPage = () => {
                       { icon: '💧', label: 'Say fabric quality is excellent', value: '92%' },
                     ].map((stat, idx) => (
                       <div key={idx} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-lg" style={{ color: '#620000' }}>
+                        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white text-lg" style={{ color: '#F48106' }}>
                           {stat.icon}
                         </div>
                         <div className="flex-1">
@@ -658,7 +658,7 @@ const ShopifyProductPage = () => {
                     ? 'bg-white shadow-sm text-gray-900' 
                     : 'hover:text-gray-900'
                   }`}
-                  style={{ color: activeTab === 'product' ? undefined : '#620000' }}
+                  style={{ color: activeTab === 'product' ? undefined : '#F48106' }}
                   onClick={() => setActiveTab('product')}
                 >
                   Product Reviews
@@ -669,7 +669,7 @@ const ShopifyProductPage = () => {
                     ? 'bg-white shadow-sm text-gray-900' 
                     : 'hover:text-gray-900'
                   }`}
-                  style={{ color: activeTab === 'brand' ? undefined : '#620000' }}
+                  style={{ color: activeTab === 'brand' ? undefined : '#F48106' }}
                   onClick={() => setActiveTab('brand')}
                 >
                   Brand Reviews
@@ -680,7 +680,7 @@ const ShopifyProductPage = () => {
                     ? 'bg-white shadow-sm text-gray-900' 
                     : 'hover:text-gray-900'
                   }`}
-                  style={{ color: activeTab === 'media' ? undefined : '#620000' }}
+                  style={{ color: activeTab === 'media' ? undefined : '#F48106' }}
                   onClick={() => setActiveTab('media')}
                 >
                   Media
@@ -696,7 +696,7 @@ const ShopifyProductPage = () => {
                       <div className="flex items-center gap-2">
                         <h3 className="text-xs font-semibold text-gray-700 uppercase tracking-wider">AI INSIGHT</h3>
                       </div>
-                      <button className="px-3 py-1.5 text-xs font-medium rounded-full" style={{ backgroundColor: 'rgba(98, 0, 0, 0.1)', color: '#620000' }}>Verified reviews</button>
+                      <button className="px-3 py-1.5 text-xs font-medium rounded-full" style={{ backgroundColor: 'rgba(244, 129, 6, 0.1)', color: '#F48106' }}>Verified reviews</button>
                     </div>
                     
                     <h4 className="text-xl font-bold text-gray-900 mb-2">Customers say</h4>
@@ -705,12 +705,12 @@ const ShopifyProductPage = () => {
                       {isAISummaryExpanded ? (
                         <>
                           Customers love how this kurta fits perfectly and flatters all body types. The premium fabric quality and elegant design make it ideal for various occasions. The kurta drapes beautifully and maintains its shape throughout the day, making it perfect for both casual and formal events. Many customers appreciate the attention to detail in the handwork on the yoke and the way the fabric feels against the skin.
-                          <button onClick={() => setIsAISummaryExpanded(false)} className="underline ml-1 cursor-pointer" style={{ color: '#620000' }}>Read less</button>
+                          <button onClick={() => setIsAISummaryExpanded(false)} className="underline ml-1 cursor-pointer" style={{ color: '#F48106' }}>Read less</button>
                         </>
                       ) : (
                         <>
                           Customers love how this kurta fits perfectly and flatters all body types. The premium fabric quality and elegant design make it ideal for various occasions.
-                          <button onClick={() => setIsAISummaryExpanded(true)} className="underline ml-1 cursor-pointer" style={{ color: '#620000' }}>Read more</button>
+                          <button onClick={() => setIsAISummaryExpanded(true)} className="underline ml-1 cursor-pointer" style={{ color: '#F48106' }}>Read more</button>
                         </>
                       )}
                     </p>
@@ -726,8 +726,8 @@ const ShopifyProductPage = () => {
                       <div className="flex flex-wrap gap-2">
                         {['Perfect Fit', 'Premium Quality Fabric', 'Elegant Design', 'Comfortable Wear', 'Flattering Silhouette'].map((item, index) => (
                           <div key={index} className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#620000' }}></span>
-                            <span className="text-sm font-semibold" style={{ color: '#620000' }}>{item}</span>
+                            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#F48106' }}></span>
+                            <span className="text-sm font-semibold" style={{ color: '#F48106' }}>{item}</span>
                           </div>
                         ))}
                       </div>
@@ -802,7 +802,7 @@ const ShopifyProductPage = () => {
                                     <svg 
                                       key={i} 
                                       className={`w-4 h-4 ${i < review.rating ? '' : 'text-gray-300'}`}
-                                      style={i < review.rating ? { color: '#620000' } : {}}
+                                      style={i < review.rating ? { color: '#F48106' } : {}}
                                       fill="currentColor" 
                                       viewBox="0 0 20 20"
                                     >
@@ -896,7 +896,7 @@ const ShopifyProductPage = () => {
                       <div className="flex items-center gap-2">
                         <h3 className="text-xs font-semibold text-gray-700 uppercase tracking-wider">AI INSIGHT</h3>
                       </div>
-                      <button className="px-3 py-1.5 text-xs font-medium rounded-full" style={{ backgroundColor: 'rgba(98, 0, 0, 0.1)', color: '#620000' }}>Verified reviews</button>
+                      <button className="px-3 py-1.5 text-xs font-medium rounded-full" style={{ backgroundColor: 'rgba(244, 129, 6, 0.1)', color: '#F48106' }}>Verified reviews</button>
                     </div>
                     
                     <h4 className="text-xl font-bold text-gray-900 mb-2">Customers say about the brand</h4>
@@ -905,12 +905,12 @@ const ShopifyProductPage = () => {
                       {isBrandAISummaryExpanded ? (
                         <>
                           Customers love the brand for its consistent quality and excellent customer service. The brand is known for premium fabrics, elegant designs, and comfortable fits that flatter all body types. Many customers appreciate the brand's attention to detail and commitment to customer satisfaction. The brand has built a strong reputation for delivering stylish and well-made ethnic wear that stands the test of time. Customers frequently mention the brand's reliability, value for money, and trustworthy service.
-                          <button onClick={() => setIsBrandAISummaryExpanded(false)} className="underline ml-1 cursor-pointer" style={{ color: '#620000' }}>Read less</button>
+                          <button onClick={() => setIsBrandAISummaryExpanded(false)} className="underline ml-1 cursor-pointer" style={{ color: '#F48106' }}>Read less</button>
                         </>
                       ) : (
                         <>
                           Customers love the brand for its consistent quality and excellent customer service. The brand is known for premium fabrics, elegant designs, and comfortable fits that flatter all body types.
-                          <button onClick={() => setIsBrandAISummaryExpanded(true)} className="underline ml-1 cursor-pointer" style={{ color: '#620000' }}>Read more</button>
+                          <button onClick={() => setIsBrandAISummaryExpanded(true)} className="underline ml-1 cursor-pointer" style={{ color: '#F48106' }}>Read more</button>
                         </>
                       )}
                     </p>
@@ -926,8 +926,8 @@ const ShopifyProductPage = () => {
                       <div className="flex flex-wrap gap-2">
                         {['Premium Quality', 'Excellent Customer Service', 'Reliable Brand', 'Elegant Designs', 'Comfortable Fit', 'Great Value'].map((item, index) => (
                           <div key={index} className="flex items-center gap-2">
-                            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#620000' }}></span>
-                            <span className="text-sm font-semibold" style={{ color: '#620000' }}>{item}</span>
+                            <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: '#F48106' }}></span>
+                            <span className="text-sm font-semibold" style={{ color: '#F48106' }}>{item}</span>
                           </div>
                         ))}
                       </div>
@@ -974,7 +974,7 @@ const ShopifyProductPage = () => {
                                     <svg 
                                       key={i} 
                                       className={`w-4 h-4 ${i < review.rating ? '' : 'text-gray-300'}`}
-                                      style={i < review.rating ? { color: '#620000' } : {}}
+                                      style={i < review.rating ? { color: '#F48106' } : {}}
                                       fill="currentColor" 
                                       viewBox="0 0 20 20"
                                     >
@@ -1172,7 +1172,7 @@ const ShopifyProductPage = () => {
                     <svg className="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M8 0L10.06 5.51L16 6.18L12 10.15L12.94 16L8 13.18L3.06 16L4 10.15L0 6.18L5.94 5.51L8 0Z" fill="#FF9500"/>
                     </svg>
-                    <div className="w-px h-3 md:h-4" style={{ backgroundColor: '#620000' }}></div>
+                    <div className="w-px h-3 md:h-4" style={{ backgroundColor: '#F48106' }}></div>
                     <span className="text-xs md:text-sm font-bold text-gray-900">203</span>
                     <span className="text-xs md:text-sm font-bold text-gray-900">Reviews</span>
                   </div>
