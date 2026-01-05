@@ -58,12 +58,12 @@ const ShopifyProductPage = () => {
 
   // Instagram reels URLs
   const instagramReels = [
-    'https://www.instagram.com/reel/DRoTRrjkdQA/?igsh=cWg4MTQ5b2g0bmNr',
-    'https://www.instagram.com/reel/DRgg6_yERoB/?igsh=MWYwZDIwcjQ4NXo2MA==',
-    'https://www.instagram.com/reel/DRb6OymkeWA/?igsh=cnRoeDFmMGVoZ2k5',
-    'https://www.instagram.com/reel/DRXCPAcEb-N/?igsh=MW81c3B2MXJtdzR1Zg==',
-    'https://www.instagram.com/reel/DRMB0mLESBi/?igsh=enI2cTlsZzZjNWsw',
-    'https://www.instagram.com/reel/DQvaoCciJxN/?igsh=ZWs4a3Bma3plZW9l'
+    'https://www.instagram.com/reel/DRUkEnujFg2/?igsh=aGRrejZvazhyZGl6',
+    'https://www.instagram.com/reel/DRev_pvFJoq/?igsh=ejhzd21vbGpzbnBu',
+    'https://www.instagram.com/reel/DRmdteZDbe_/?igsh=MzI5MWFqNW1xMWZw',
+    'https://www.instagram.com/reel/DRwmNGfjPSN/?igsh=MWhtNG0xOTRtZmN0OA==',
+    'https://www.instagram.com/reel/DR13frhD--J/?igsh=MXB2OHVvZm90MGd0dA==',
+    'https://www.instagram.com/reel/DSHZm4ejqu9/?igsh=MWh5aTAzaGp0NWk3bw=='
   ];
 
   // Create Instagram embed HTML using blockquote format
