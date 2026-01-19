@@ -1,1 +1,13 @@
 @import "tailwindcss";
+
+/* Instagram embeds: prevent clipping in responsive layouts */
+.instagram-media,
+.instagram-media-rendered {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.instagram-media iframe {
+  max-width: 100% !important;
+}
