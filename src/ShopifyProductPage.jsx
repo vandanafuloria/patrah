@@ -13,6 +13,7 @@ import reviewImage0 from './assets/review_0.png';
 import reviewImage1 from './assets/review_1.png';
 import reviewImage2 from './assets/review_2.png';
 import reviewImage3 from './assets/review_3.png';
+import reviewImage4 from './assets/review_4.png';
 
 // Brand Name - Change this to your brand
 const BRAND_NAME = "Meera Fab";
@@ -140,15 +141,21 @@ const ShopifyProductPage = () => {
             if (window.instgrm && window.instgrm.Embeds) {
               window.instgrm.Embeds.process();
               clearInterval(retryInterval);
-            } else if (retries >= 10) {
+            } else if (retries >= 20) {
               clearInterval(retryInterval);
             }
-          }, 200);
+          }, 300);
         }
       };
       
-      const timer = setTimeout(processEmbeds, 500);
-      return () => clearTimeout(timer);
+      // Process immediately and also after a delay to ensure embeds are rendered
+      processEmbeds();
+      const timer = setTimeout(processEmbeds, 800);
+      const timer2 = setTimeout(processEmbeds, 1500);
+      return () => {
+        clearTimeout(timer);
+        clearTimeout(timer2);
+      };
     }
   }, [activeTab, showInstagramModal]);
   
@@ -168,6 +175,7 @@ const ShopifyProductPage = () => {
     reviewImage1,
     reviewImage2,
     reviewImage3,
+    reviewImage4,
   ];
 
   // Product Reviews data
@@ -1111,10 +1119,10 @@ const ShopifyProductPage = () => {
                     {instagramReels.map((url, index) => (
                       <div
                         key={`media-reel-${index}`}
-                        className="w-full max-w-full box-border"
+                        className="w-full flex justify-center"
                       >
                         <div 
-                          className="w-full max-w-full box-border"
+                          className="w-full max-w-[540px] instagram-embed-container"
                           dangerouslySetInnerHTML={{ __html: createInstagramEmbed(url) }}
                         />
                       </div>
@@ -1172,10 +1180,10 @@ const ShopifyProductPage = () => {
                   {instagramReels.map((url, index) => (
                     <div
                       key={`insta-reel-${index}`}
-                      className="w-full max-w-full box-border mb-4 last:mb-0"
+                      className="w-full flex justify-center mb-6 last:mb-0"
                     >
                       <div 
-                        className="w-full max-w-full box-border"
+                        className="w-full max-w-[540px] instagram-embed-container"
                         dangerouslySetInnerHTML={{ __html: createInstagramEmbed(url) }}
                       />
                     </div>

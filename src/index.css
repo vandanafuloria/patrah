@@ -1,13 +1,29 @@
 @import "tailwindcss";
 
-/* Instagram embeds: prevent clipping in responsive layouts */
+/* Instagram embeds: Full Instagram post UI styling */
 .instagram-media,
 .instagram-media-rendered {
   width: 100% !important;
   max-width: 100% !important;
-  margin: 0 !important;
+  margin: 0 auto !important;
+  background: #000 !important;
+  border: 1px solid #dbdbdb !important;
+  border-radius: 4px !important;
+  padding: 0 !important;
+  min-width: 326px !important;
 }
 
 .instagram-media iframe {
   max-width: 100% !important;
+  width: 100% !important;
+  min-height: 500px !important;
+}
+
+/* Ensure Instagram embed container has proper spacing */
+.instagram-embed-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
 }
