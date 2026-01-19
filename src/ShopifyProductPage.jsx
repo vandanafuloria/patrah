@@ -25,7 +25,7 @@ const PRODUCT_IMAGE_MOBILE = productImagePhone; // Phone view image
 const PRODUCT_IMAGE_DESKTOP = productImageLaptop; // Laptop view image
 
 // Product Details - Edit these easily
-const PRODUCT_NAME = "Women Printed Straight Kurta with Palazzo & Dupatta MF-258";
+const PRODUCT_NAME = "Freestyle peplum top";
 const PRODUCT_PRICE = 8541;
 const PRODUCT_ORIGINAL_PRICE = 8990;
 const PRODUCT_DISCOUNT = 5;
@@ -357,7 +357,7 @@ const ShopifyProductPage = () => {
             {/* Product Details Section */}
             <div className="flex flex-col gap-4">
               {/* Product Title */}
-              <h1 className="text-2xl md:text-3xl font-serif font-normal text-gray-900 leading-tight">
+              <h1 className="text-xl md:text-2xl font-serif font-normal leading-tight" style={{ color: '#A0522D' }}>
                 {PRODUCT_NAME}
               </h1>
               
